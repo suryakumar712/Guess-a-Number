@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Number Guess</title>
+
+	<meta charset="UTF-8">
+	<meta name="keywords" content="Guess a number">
+	<meta name="author" content="Surya">
+	<meta name="description" content="Guess a number project">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="refresh" content="60">
+
+	<style>
+	#name{
+		background-color:#0F2431;
+		color:white;
+		text-align:center;
+		padding:50px;
+	}
+	//.left{}
+	aside{
+		background-color:lightgray;
+		float:right;
+		width:75%;
+		height:80%;
+		padding:20px 20px 130px 20px;
+	}
+	h2{
+		text-align:center;
+		margin-top:70px;
+	}
+	.bar{
+		margin-top:70px;
+		margin-left:385px;
+	}
+	#output{
+		text-align:center;
+		//padding-right:60px;
+		margin-top:70px;
+	}
+	</style>
+
+	<script>
+		let num=Math.floor(Math.random()*100);
+		function op(){
+			document.getElementById("output").innerHTML=num;
+			let ip=document.getElementById("input").value;
+			if(ip==num){
+				document.getElementById("output").innerHTML="You Guessed Correctly! Refresh the page to play again.";
+			}
+			else if(ip<num){
+				document.getElementById("output").innerHTML="Try higher number";
+			}
+			else{
+				document.getElementById("output").innerHTML="Try lower number";	
+			}
+	}
+	</script>
+</head>
+<body>
+	<h1 id="name">Number Guessing Game</h1>
+	<aside>
+		<h2>Guess a number between 1 - 100</h2>
+		<div class="bar">
+		<input type='text' id="input" placeholder="Enter your guess here..." autocomplete="off"><button id="btn" onclick="op()">Enter</button>
+		</div>
+		<p id="output"><b>Enter a number above</b></p>
+	</aside>
+	<div class="left">
+	<h3>Instructions:</h3>
+	<ol>
+		<li>Insert your guess and 'Check'</li>
+		<li>You'll get hints at the bottom</li>
+		<li>Based on the hints, try another guess and 'Check'</li>
+		<li>You have to guess the number within 60secs.</li>
+		<li>Good Luck!</li>
+	</ol>
+	</div>
+</body>
